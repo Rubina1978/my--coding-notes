@@ -135,3 +135,56 @@ Save installed packages:
 
 ```bash
 pip freeze --local > requirements.txt
+
+## Models → Database → Admin
+
+### 1. Create the model
+
+In `models.py`:
+
+```python
+from django.db import models
+
+
+class Project(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+
+### create migration:
+
+python manage.py makemigrations
+
+### apply migrations:
+
+python manage.py migrate
+
+### register model in the aoo's admin.py:
+
+from django.contrib import admin
+from .models import Project
+
+admin.site.register(Project)
+
+### create superuser(if needed):
+
+python manage.py createsuperuser
+
+go to /admin/ and log in
+
+
+### 🧠 Tiny memory trick
+
+Think:
+
+**"I designed it → I told Django → Django built it → I made it editable."**
+
+- **Model** = design what you store
+- **makemigrations** = tell Django what changed
+- **migrate** = actually change the database
+- **admin.py** = make it manageable through Admin
+
+
+
+
+
+
