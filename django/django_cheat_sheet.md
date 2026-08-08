@@ -123,3 +123,15 @@ Images
 - Forgot to add app to INSTALLED_APPS.
 - Forgot {% load static %}.
 - bootstrap.bundle already includes Popper.
+
+## Requirements
+
+Install package:
+
+```bash
+pip install 
+
+Save installed packages:
+
+```bash
+pip freeze --local > requirements.txt
