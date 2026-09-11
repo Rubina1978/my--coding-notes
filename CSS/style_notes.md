@@ -15,14 +15,24 @@ to get all links to far right use
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'new_portfolio', 'static')]
 
+
+## cards 
+
+make all cards same length on all sizes  set also height 100%
+
+``` bash
+    min-height: 280px;
+    height: 100%;
+    min-width: 200px;
+```
+
 ## Navbar
 
 To make navigation stick add:
 
 ```bash
 fixed-top
-
-``
+```
 
 
 
