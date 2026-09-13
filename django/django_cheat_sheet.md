@@ -2,7 +2,7 @@
 
 ## Start a Project
 
-Create virtual environment
+## Create virtual environment
 
 ```bash
 python -m venv .venv
@@ -14,31 +14,31 @@ Activate
 .venv\Scripts\activate
 ```
 
-Install Django
+## Install Django
 
 ```bash
 pip install django~=5.2
 ```
 
-Check Django version
+## Check Django version
 
 ```bash
 python -m django --version
 ```
 
-Create project
+## Create project
 
 ```bash
 django-admin startproject new_portfolio .
 ```
 
-Create requirements.txt
+## Create requirements.txt
 
 ```bash
 pip freeze > requirements.txt
 ```
 
-Run the initial migrations:
+## Run the initial migrations:
 
 ```bash
 python manage.py migrate
@@ -115,8 +115,6 @@ Images
 
 
 
-
-
 ## Common Mistakes
 
 - Forgot to add templates to DIRS.
@@ -135,10 +133,11 @@ Save installed packages:
 
 ```bash
 pip freeze --local > requirements.txt
+```
 
 ## Models → Database → Admin
 
-### 1. Create the model
+## 1. Create the model
 
 In `models.py`:
 
@@ -149,16 +148,30 @@ from django.db import models
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+```
 
-### create migration:
+## Check before making migrations
 
+```bash
+
+python manage.py make migrations --dry
+
+```
+## check before migrate
+
+```bash
+
+python manage.py migrate --plan
+
+## make migrations 
+
+```bash
 python manage.py makemigrations
-
-### apply migrations:
-
 python manage.py migrate
+```
 
-### register model in the aoo's admin.py:
+## Register model in the app's admin.py
+
 
 from django.contrib import admin
 from .models import Project
