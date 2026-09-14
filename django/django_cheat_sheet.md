@@ -141,13 +141,28 @@ pip freeze --local > requirements.txt
 
 In `models.py`:
 
-```python
+```bash
 from django.db import models
 
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+
+```
+To make a field optional:
+
+```bash
+
+blank=True
+```
+
+## Create fixtures before moving databases!
+
+```bash 
+
+python manage.py dumpdata home_page --indent 4 > home_page/fixtures/home_page.json
+
 ```
 
 ## Check before making migrations
@@ -172,18 +187,18 @@ python manage.py migrate
 
 ## Register model in the app's admin.py
 
-
+```bash
 from django.contrib import admin
 from .models import Project
 
 admin.site.register(Project)
-
+```
 ### create superuser(if needed):
-
+```bash
 python manage.py createsuperuser
 
 go to /admin/ and log in
-
+```
 
 ### 🧠 Tiny memory trick
 
