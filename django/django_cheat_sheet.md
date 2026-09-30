@@ -165,8 +165,12 @@ python manage.py dumpdata home_page --indent 4 > home_page/fixtures/home_page.js
 
 ```
 
-## Check before making migrations
+## upload fixtures to project back
 
+```bash
+python manage.py loaddata home_page/fixtures/home_page.json 
+## Check before making migrations
+## just change the page if different project or page
 ```bash
 
 python manage.py make migrations --dry
