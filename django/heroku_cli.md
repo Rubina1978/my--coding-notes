@@ -28,3 +28,4 @@ print(image.url)
 ``` bash
 for p in Project.objects.all():
     print(p.id, p.project_title, "->", p.image.name)
+

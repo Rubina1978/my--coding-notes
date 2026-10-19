@@ -66,6 +66,10 @@ Remember:
 
 ---
 
+## the flow of an app:
+
+create app -> add to installed apps in settings.py -> create models -> register in admin.py -> makemigrations + migrate -> create views -> create template -> create urls
+
 ## Templates
 
 Project structure
@@ -216,7 +220,28 @@ Think:
 - **admin.py** = make it manageable through Admin
 
 
+## connect js 
 
+```bash
 
+<script src="{% static 'javascript/index.js' %}"></script>
 
+```
+
+## to control layout with css instead of summernotes and others:
+
+``` bash
+
+<h1>{{ about.heading }}</h1>
+
+{{ about.introduction|linebreaks }}
+
+{% for fact in key_facts %}
+    <div class="fact-card">
+        <h3>{{ fact.title }}</h3>
+        <p>{{ fact.description }}</p>
+    </div>
+{% endfor %}
+
+```
 
